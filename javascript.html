@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<!-- Comment -->
+
+<html>
+
+<head>
+	<link rel="stylesheet" href="style.css" />
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	
+<script>
+		var votes = 0
+
+		function upvote(){
+			votes = votes + 1;
+			$('#votes').text(votes);
+		
+	}
+
+	function downvote(){
+			votes = votes - 1;
+			$('#votes').text(votes);
+		}
+
+		function changecolour(){
+			$('body').css('background', 'none');
+			$('body').css('background-color','red');
+		}
+
+		function sayhi() {
+			var x = 0;
+			var y = 1;
+			var sum = 1;
+			for ( var i = 0; i < 10; i++){
+				x = y;
+				y = sum;
+				sum = x + y;
+				//alert(x);
+			}
+		}
+		window.onload = sayhi;
+	
+	function convert() {
+		var cel = $('#celsius').val();
+		var fahrenheit = cel*9/5+32;
+		$('#fahrenheit').val(fahrenheit);
+	}
+
+	</script>
+
+
+
+
+</head>
+
+<body>
+
+<label>Celsius</label><input id="celsius" type="text"><br><br>
+<label>Fahrenheit</label><input id="fahrenheit" type="text">
+
+<h1 id="votes">0</h1>
+
+<button onclick="upvote()" style="withdth:150px;" class="btn btn-info">+1</button>
+
+<button onclick="downvote()" style="withdth:150px;" class="btn btn-info">-1</button>
+
+<button onclick="changecolour()" style="withdth:150px;" class="btn btn-info">changecolour</button>
+
+<button onclick="convert()" style="withdth:150px;" class="btn btn-info">convert</button>
+
+</body>
+
+</html>
